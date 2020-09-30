@@ -29,15 +29,15 @@ import Palette
 manifest : Manifest.Config Pages.PathKey
 manifest =
     { backgroundColor = Just Color.white
-    , categories = [ Pages.Manifest.Category.education ]
+    , categories = [ Pages.Manifest.Category.entertainment, Pages.Manifest.Category.travel, Pages.Manifest.Category.custom "Adventure" ]
     , displayMode = Manifest.Standalone
     , orientation = Manifest.Portrait
-    , description = "elm-pages-starter - A statically typed site generator."
+    , description = "sunshine state adventure co - Adventure with confidence and coordinates."
     , iarcRatingId = Nothing
-    , name = "elm-pages-starter"
-    , themeColor = Just Color.white
+    , name = "sunshine state adventure co"
+    , themeColor = Just Color.blue
     , startUrl = pages.index
-    , shortName = Just "elm-pages-starter"
+    , shortName = Just "sunshine state adventure co"
     , sourceIcon = images.iconPng
     }
 
@@ -167,10 +167,6 @@ pageView model siteMetadata page viewForPage =
             , body =
                 [ viewForPage
                 ]
-
-            --        |> Element.textColumn
-            --            [ Element.width Element.fill
-            --            ]
             }
 
         Metadata.Article metadata ->
@@ -186,7 +182,7 @@ pageView model siteMetadata page viewForPage =
             }
 
         Metadata.BlogIndex ->
-            { title = "elm-pages blog"
+            { title = "sunshine state adventure co blog"
             , body =
                 [ Element.column [ Element.padding 20, Element.centerX ] [ Index.view siteMetadata ]
                 ]
@@ -217,10 +213,10 @@ head metadata =
                 Metadata.Page meta ->
                     Seo.summaryLarge
                         { canonicalUrlOverride = Nothing
-                        , siteName = "elm-pages-starter"
+                        , siteName = "sunshine state adventure co"
                         , image =
                             { url = images.iconPng
-                            , alt = "elm-pages logo"
+                            , alt = "sunshine state adventure co logo"
                             , dimensions = Nothing
                             , mimeType = Nothing
                             }
@@ -233,7 +229,7 @@ head metadata =
                 Metadata.Article meta ->
                     Seo.summaryLarge
                         { canonicalUrlOverride = Nothing
-                        , siteName = "elm-pages starter"
+                        , siteName = "sunshine state adventure co"
                         , image =
                             { url = meta.image
                             , alt = meta.description
@@ -270,16 +266,16 @@ head metadata =
                     in
                     Seo.summary
                         { canonicalUrlOverride = Nothing
-                        , siteName = "elm-pages-starter"
+                        , siteName = "sunshine state adventure co"
                         , image =
                             { url = meta.avatar
-                            , alt = meta.name ++ "'s elm-pages articles."
+                            , alt = meta.name ++ "'s sunshine state adventure co articles."
                             , dimensions = Nothing
                             , mimeType = Nothing
                             }
                         , description = meta.bio
                         , locale = Nothing
-                        , title = meta.name ++ "'s elm-pages articles."
+                        , title = meta.name ++ "'s sunshine state adventure co articles."
                         }
                         |> Seo.profile
                             { firstName = firstName
@@ -290,16 +286,16 @@ head metadata =
                 Metadata.BlogIndex ->
                     Seo.summaryLarge
                         { canonicalUrlOverride = Nothing
-                        , siteName = "elm-pages"
+                        , siteName = "sunshine state adventure co"
                         , image =
                             { url = images.iconPng
-                            , alt = "elm-pages logo"
+                            , alt = "sunshine state adventure co logo"
                             , dimensions = Nothing
                             , mimeType = Nothing
                             }
                         , description = siteTagline
                         , locale = Nothing
-                        , title = "elm-pages blog"
+                        , title = "sunshine state adventure co blog"
                         }
                         |> Seo.website
            )
@@ -307,9 +303,9 @@ head metadata =
 
 canonicalSiteUrl : String
 canonicalSiteUrl =
-    "https://elm-pages-starter.netlify.com"
+    "https://sunshinestateadventureco.netlify.com"
 
 
 siteTagline : String
 siteTagline =
-    "Starter blog for elm-pages"
+    "Adventure with confidence and coordinates."

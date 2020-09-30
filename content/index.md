@@ -1,14 +1,25 @@
 ---
-title: elm-pages-starter - a simple blog starter
+title: Sunshine State Adventure Co
 type: page
 ---
+![](images/top_image.png)
 
-This is an example repo to get you up and running with `elm-pages`.
+## Welcome to Sunshine State Adventure Co!
 
-The entrypoint file is `index.js`. That file imports `src/Main.elm`. The `content` folder is turned into your static pages. The rest is mostly determined by logic in the Elm code! Learn more with the resources below.
+Florida is know for a lot of things... We want to be known FOR Adventure! Come and see the real Florida one dirt road at a time! 🏕🇺🇸
 
-## Learn more about `elm-pages`
+More to come here!
 
-- Documentation site: https://elm-pages.com
-- [Elm Package docs](https://package.elm-lang.org/packages/dillonkearns/elm-pages/latest/)
-- [`elm-pages` blog](https://elm-pages.com/blog)
+### Events
+
+- September 19th, 2020: Florida Adventure Trail 
+            - 8am - 6pm 
+            - Registration: **FULL**
+- October 24th, 2020: Hardrock Ocala 
+            - 8am - 3pm 
+            - Registration: [Here]
+- November 16th - 22nd, 2020: Talladega National Forest & Stoney Lonesome 
+            - Overnight
+            - Registration: **FULL**
+
+[Here]: forms.gle/kkzpvxDoAXZWBsUz9

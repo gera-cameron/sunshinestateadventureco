@@ -55,7 +55,7 @@ header currentPath =
             , Element.Background.gradient
                 { angle = 0.2
                 , steps =
-                    [ Element.rgb255 0 242 96
+                    [ Element.rgb255 255 69 0
                     , Element.rgb255 5 117 230
                     ]
                 }
@@ -73,14 +73,20 @@ header currentPath =
                 { url = "/"
                 , label =
                     Element.row [ Font.size 30, Element.spacing 16 ]
-                        [ DocumentSvg.view
-                        , Element.text "elm-pages-starter"
+                        [ Element.image
+                            [ Element.width (Element.px 22)
+                            , Font.color Palette.color.primary
+                            ]
+                            { src = ImagePath.toString Pages.images.logo, description = "Sunshine State Adv Co" }
+                        , Element.text "Sunshine State Adventure Co" -- TODO Add logo
                         ]
                 }
             , Element.row [ Element.spacing 15 ]
-                [ elmDocsLink
-                , githubRepoLink
+                [ highlightableLink currentPath Pages.pages.about.directory "About"
+                , highlightableLink currentPath Pages.pages.adventures.directory "Adventures"
                 , highlightableLink currentPath Pages.pages.blog.directory "Blog"
+                , instagramLink
+                , youtubeLink
                 ]
             ]
         ]
@@ -110,27 +116,26 @@ highlightableLink currentPath linkDirectory displayName =
         }
 
 
-githubRepoLink : Element msg
-githubRepoLink =
+instagramLink : Element msg
+instagramLink =
     Element.newTabLink []
-        { url = "https://github.com/dillonkearns/elm-pages"
+        { url = "https://www.instagram.com/sunshinestate_adventureco/"
         , label =
             Element.image
                 [ Element.width (Element.px 22)
                 , Font.color Palette.color.primary
                 ]
-                { src = ImagePath.toString Pages.images.github, description = "Github repo" }
+                { src = ImagePath.toString Pages.images.instagram, description = "Instagram" }
         }
 
-
-elmDocsLink : Element msg
-elmDocsLink =
+youtubeLink : Element msg
+youtubeLink =
     Element.newTabLink []
-        { url = "https://package.elm-lang.org/packages/dillonkearns/elm-pages/latest/"
+        { url = "https://www.youtube.com/channel/UCAHUbMf2e6lFuAjosC1DdJg"
         , label =
             Element.image
                 [ Element.width (Element.px 22)
                 , Font.color Palette.color.primary
                 ]
-                { src = ImagePath.toString Pages.images.elmLogo, description = "Elm Package Docs" }
+                { src = ImagePath.toString Pages.images.youtube, description = "YouTube" }
         }
